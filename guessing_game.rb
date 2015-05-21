@@ -19,13 +19,13 @@ class Guessing
     dice = [1..100]
   end
 end
-
+#hmmm...could probably combine these two methods into one....
   def number
     number = @dice.rand
   end
 
   def game
-    5.times do
+    5.times do |number|
       print "Do you feel lucky punk? Fine. Pick a number"
       guess = get.chomp.to_i
 
@@ -34,7 +34,7 @@ end
       break
     elsif guess != number
       puts "Nope"
-    elsif guess != number && guess == guess
+    elsif guess != number && guess == guess #hella jacked is there a method that lists previous guess?
       puts "Well...looks like you're driving the struggle bus"
     else guess != number
       puts "Whoops, the correct answer was #{number}"
