@@ -34,9 +34,11 @@ end
       if guess == dice
         puts "Congrats"
       break
+    elsif guess.uniq! != dice
+      puts ".....look who's driving the struggle bus"
     elsif guess != dice && guess >= dice
         puts "You're too high bro"
-    elsif guess != dice && guess <= dice
+    else guess != dice && guess <= dice
         puts "Hmmm too low"
     end
   end
