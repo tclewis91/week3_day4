@@ -27,15 +27,19 @@ end
   def game
     5.times do
       print "Do you feel lucky punk? Fine. Pick a number"
-      guess
+      guess = get.chomp.to_i
 
     if guess == number
       puts "Congrats"
       break
     elsif guess != number
       puts "Nope"
-    else guess != number &&
+    elsif guess != number && guess == guess
       puts "Well...looks like you're driving the struggle bus"
+    else guess != number
+      puts "Whoops, the correct answer was #{number}"
     end
   end
 end
+end
+
