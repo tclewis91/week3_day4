@@ -1,5 +1,6 @@
 class Guessing_game
   #intro
+
   def intro
   print "Hey, welcome to the guessing game! What's your name?"
   name = gets.upcase.chomp
@@ -13,4 +14,8 @@ class Guessing_game
       puts "sorry,please re-type that"
   end
 #should that have been more than one method?
-
+#game method
+  def dice
+    @dice = dice
+    dice = [1..100]
+  end
