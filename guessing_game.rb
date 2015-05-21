@@ -1,6 +1,5 @@
-class Guessing_game
+class Guessing
   #intro
-
   def intro
   print "Hey, welcome to the guessing game! What's your name?"
   name = gets.upcase.chomp
@@ -14,8 +13,29 @@ class Guessing_game
       puts "sorry,please re-type that"
   end
 #should that have been more than one method?
-#game method
+#setting basics
   def dice
     @dice = dice
     dice = [1..100]
   end
+end
+
+  def number
+    number = @dice.rand
+  end
+
+  def game
+    5.times do
+      print "Do you feel lucky punk? Fine. Pick a number"
+      guess
+
+    if guess == number
+      puts "Congrats"
+      break
+    elsif guess != number
+      puts "Nope"
+    else guess != number &&
+      puts "Well...looks like you're driving the struggle bus"
+    end
+  end
+end
