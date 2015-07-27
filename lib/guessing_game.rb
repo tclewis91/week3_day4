@@ -1,12 +1,11 @@
 class Game
 
   def initialize
-   @dice = [1..100].sample
-   @total_guesses = [5]
+    @dice = [1..100].sample
   end
-
   def start
     intro
+    attempt
     game
   end
 
@@ -21,8 +20,17 @@ class Game
       puts "later!"
     else ans == ''
       puts "sorry,please re-type that"
+    end
   end
-end
+
+
+
+  def attempt
+    puts "So what number do you think it is?"
+    @guess = gets.chomp.to_i
+  end
 
   def game
-    guess = gets.chomp.to_i
+
+
+
