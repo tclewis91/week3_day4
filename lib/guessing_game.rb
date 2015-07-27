@@ -3,12 +3,15 @@ class Game
   def initialize
     @dice = [1..100].sample
   end
+
   def start
     intro
-    attempt
     game
   [1..5].each do |n|
-
+    attempt
+    game
+    break if winner ==true
+  end
 
   def intro
     print "Hey, welcome to the guessing game! What's your name?"
@@ -32,6 +35,11 @@ class Game
   end
 
   def game
+  end
+
+  def winner
+  end
+end
 
 
 
