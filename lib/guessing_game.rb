@@ -1,8 +1,12 @@
 class Game
 
   def initialize
+   @dice = [1..100].sample
+  end
+
+  def start
     intro
-    game_setup
+    game
   end
 
   def intro
@@ -11,39 +15,13 @@ class Game
     puts "Cool, so #{name}, do you wanna play? (y/n)"
     ans = gets.chomp
     if ans == 'y'
-      puts "hell yeah!"
+      puts "hell yeah! so, I'm thinking of a number between 1-100...what is it?"
     elsif ans == 'n'
       puts "later!"
     else ans == ''
       puts "sorry,please re-type that"
   end
 end
-#setting basics
-  def dice
-    @dice = [1..100].sample
-  end
 
-  def game_setup
-    print "Do you feel lucky punk? Fine. Pick a number"
-    @guess = get.chomp.to_i
-    @counter += 1
-  end
-end
-  def game_internals
-    until @counter == 5
-      if guess == dice
-        puts "Congrats"
-      break
-    elsif guess.uniq! != @dice
-      puts ".....look who's driving the struggle bus"
-    elsif guess != @dice && guess >= @dice
-        puts "You're too high bro"
-    else guess != @dice && guess <= @dice
-        puts "Hmmm too low"
-    end
-  end
-end
-
-end
-
-Game.new
+  def game
+    guess = gets.chomp.to_i
