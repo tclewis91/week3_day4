@@ -7,7 +7,8 @@ class Game
     intro
     attempt
     game
-  end
+  [1..5].each do |n|
+
 
   def intro
     print "Hey, welcome to the guessing game! What's your name?"
@@ -31,6 +32,7 @@ class Game
   end
 
   def game
+
 
 
 
