@@ -27,8 +27,6 @@ class Game
     end
   end
 
-
-
   def attempt
     puts "So what number do you think it is?"
     @guess = gets.chomp.to_i
