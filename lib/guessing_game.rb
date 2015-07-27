@@ -1,9 +1,10 @@
-class Guessing
+class Game
 
   def initialize
-    @counter = 0
+    intro
+    game_setup
   end
-#text intro to game
+
   def intro
     print "Hey, welcome to the guessing game! What's your name?"
     name = gets.upcase.chomp
@@ -19,30 +20,30 @@ class Guessing
 end
 #setting basics
   def dice
-    @dice = dice
-    dice = [1..100].rand
+    @dice = [1..100].sample
   end
 
   def game_setup
     print "Do you feel lucky punk? Fine. Pick a number"
-    guess = get.chomp.to_i
+    @guess = get.chomp.to_i
     @counter += 1
   end
-
+end
   def game_internals
     until @counter == 5
       if guess == dice
         puts "Congrats"
       break
-    elsif guess.uniq! != dice
+    elsif guess.uniq! != @dice
       puts ".....look who's driving the struggle bus"
-    elsif guess != dice && guess >= dice
+    elsif guess != @dice && guess >= @dice
         puts "You're too high bro"
-    else guess != dice && guess <= dice
+    else guess != @dice && guess <= @dice
         puts "Hmmm too low"
     end
   end
 end
 
-
 end
+
+Game.new
