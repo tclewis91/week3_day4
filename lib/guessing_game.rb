@@ -2,6 +2,7 @@ class Game
 
   def initialize
    @dice = [1..100].sample
+   @total_guesses = [5]
   end
 
   def start
